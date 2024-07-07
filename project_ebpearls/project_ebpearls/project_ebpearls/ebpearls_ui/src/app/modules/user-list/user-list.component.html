@@ -1,0 +1,32 @@
+<button (click)="addUser()">Add User</button>
+<div class="card">
+    <div class="table-responsive">
+      <table class="table table-centered table-hover mt-2" id="datatable">
+        <thead>
+          <tr>
+            <th class="border-top-0" scope="col">Name</th>
+            <th class="border-top-0" scope="col">Age</th>
+            <th class="border-top-0" scope="col">Phone Number</th>
+            <th class="border-top-0" scope="col">Status</th>
+            <th class="border-top-0" scope="col">Designation</th>
+            <th class="border-top-0" scope="col" style="width:120px"></th>
+          </tr>
+        </thead>
+        <tbody>
+        @if(userList.length > 0){
+            <tr *ngFor="let item of userList">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.phoneNumber}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.designation}}</td>
+              </tr>
+        }
+        @else{
+            <td colspan="12">No data</td>
+        }
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
